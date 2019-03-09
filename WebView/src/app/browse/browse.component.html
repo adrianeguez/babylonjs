@@ -1,0 +1,11 @@
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Browse"></Label>
+</ActionBar>
+
+<GridLayout rows="75 * 50" sdkExampleTitle sdkToggleNavButton>
+
+    <!--<WebView row="1" #myWebView [src]="webViewSrc"></WebView>-->
+    <Button row="0" col="0" text="salir" height="210"></Button>
+    <WebView #webViewRef row="1" col="0" [src]="paginaWeb"></WebView>
+    <!--<Label row="2" #labelResult></Label>-->
+</GridLayout>
