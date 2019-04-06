@@ -29,6 +29,8 @@ export class BrowseComponent implements AfterViewInit {
     paginaWeb = "~/babylonjs/index.html";
 
     ngAfterViewInit() {
+
+
         // let webview: WebView = this.webViewRef.nativeElement;
         //
         // webview.on(WebView.loadFinishedEvent, function (args: LoadEventData) {
@@ -51,6 +53,7 @@ export class BrowseComponent implements AfterViewInit {
         if(this.intentos < 10){
             if(nativeElement.android){
                 nativeElement.android.getSettings().setBuiltInZoomControls(false);
+
             }else{
                 setTimeout(
                     ()=>{
@@ -65,6 +68,18 @@ export class BrowseComponent implements AfterViewInit {
         }
 
 
+    }
+
+    onLoadStarted(){
+        const settings = this.webViewRef.nativeElement.android.getSettings();
+        settings.setLoadWithOverviewMode(true);
+        settings.setUseWideViewPort(true);
+        settings.setJavaScriptEnabled(true);
+        settings.setAllowFileAccess(true);
+        settings.setAllowContentAccess(true);
+        settings.setAllowFileAccessFromFileURLs(true);
+        settings.setAllowUniversalAccessFromFileURLs(true);
+        console.log(settings)
     }
 
     // goBack() {

@@ -6,6 +6,6 @@
 
     <!--<WebView row="1" #myWebView [src]="webViewSrc"></WebView>-->
     <Button row="0" col="0" text="salir" height="210"></Button>
-    <WebView #webViewRef row="1" col="0" [src]="paginaWeb"></WebView>
+    <WebView #webViewRef row="1" col="0" [src]="paginaWeb" (loadStarted)="onLoadStarted($event)"></WebView>
     <!--<Label row="2" #labelResult></Label>-->
 </GridLayout>

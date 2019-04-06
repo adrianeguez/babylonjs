@@ -52,34 +52,21 @@ export class SearchComponent implements OnInit {
         console.log('Va a descargar');
 
 
-        setTimeout(
-            ()=>{
-                request({
-                    url: "http://192.168.20.101:3000",
-                    method: "GET"
-                }).then((response: HttpResponse) => {
-                    console.log(response);
-                }, (e) => {
-                    console.log(e);
-                });
-
-                getFile('http://192.168.20.101:3000/descargar', pdfADescargar)
-                    .then(
-                        (data) => {
-                            console.log('Data: ', data);
-                        },
-                        (error) => {
-                            console.log('Error: ', error);
-                        }
-                    )
-                    .catch(
-                        (e)=>{
-                            console.log('Q CULO',e);
-                        }
-                    );
-                console.log('Ya promeseando');
-            },3000
-        )
+        getFile('https://babylon-adrianeguez.c9users.io/descargar', pdfADescargar)
+            .then(
+                (data) => {
+                    console.log('Data: ', data);
+                },
+                (error) => {
+                    console.log('Error: ', error);
+                }
+            )
+            .catch(
+                (e) => {
+                    console.log('Q CULO', e);
+                }
+            );
+        console.log('Ya promeseando');
 
 
         // console.log(internalFolder);
